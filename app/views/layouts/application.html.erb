@@ -6,10 +6,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <%# application.js file is then available to all the views. %>
   </head>
 
   <body>
+    <%= link_to 'home', root_path %>
+    <%= link_to 'about', about_path %>
+    <%= link_to 'new', courses_new_path %>
     <%= yield %>
   </body>
 </html>
