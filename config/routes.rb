@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'courses#index' #courses controller, index action.
-  get 'about', to 'pages#about'
+  get 'courses/new', to: 'courses#new' #goes to courses controller, new action
+  get 'about', to: 'pages#about'
 end
