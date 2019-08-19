@@ -5,58 +5,19 @@
 </div>
 
 <div class="row">
-    <div class="col s6 m6">
-        <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Course 1</span>
-            <p>Introduction to CSS Course 1. This is a course about CSS1</p>
+    <% @courses.each do |course| %>
+        <div class="col s6 m6">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title"><%=course.short_name%></span>
+                <p><%=course.description%></p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+            </div>
         </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-        </div>
-    </div>
-
-    <div class="col s6 m6">
-        <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Course 2</span>
-            <p>Introduction to CSS Course 2. This is a course about CSS2</p>
-        </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col s6 m6">
-        <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Course 3</span>
-            <p>Introduction to CSS Course 3. This is a course about CSS3</p>
-        </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-        </div>
-    </div>
-
-    <div class="col s6 m6">
-        <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Course 4</span>
-            <p>Introduction to CSS Course 4. This is a course about CSS4</p>
-        </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-        </div>
-    </div>
+    <%end%>
 </div>
 
