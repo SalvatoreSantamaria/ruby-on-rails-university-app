@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'courses#index' #courses controller, index action.
   get 'courses/new', to: 'courses#new' #goes to courses controller, new action
   get 'about', to: 'pages#about'
+  resources :students, except: [:destroy]
 end
