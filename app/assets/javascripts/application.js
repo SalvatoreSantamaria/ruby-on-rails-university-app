@@ -22,5 +22,6 @@ $(document).on('turbolinks:load', function(){ //after turbo links load, then run
     $(".dropdown-trigger").dropdown();
     $(".dropdown-trigger2").dropdown();
     $('.sidenav').sidenav();
+    $('#fade-out-target').fadeOut(4000);
 })
 
