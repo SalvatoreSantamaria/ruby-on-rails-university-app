@@ -1,10 +1,14 @@
 class StudentsController < ApplicationController
+    #before_action will be applied to whatever method we specify
+    #below, set_student is running from below
+    before_action :set_student, only: [:show, :edit, :update]
+
     def index
         @students = Student.all
     end
 
     def show
-        @student = Student.find(params[:id])
+        
     end
 
     def new
@@ -12,7 +16,7 @@ class StudentsController < ApplicationController
     end
 
     def create 
-        @student = Student.new(student_params)
+        
         if @student.save
             flash[:sucess] = "You have successfully signed up" #display a message
             redirect_to root_path
@@ -23,7 +27,7 @@ class StudentsController < ApplicationController
     end
 
     def edit
-        @student = Student.find(params[:id])
+        
     end
 
     def update
@@ -35,6 +39,13 @@ class StudentsController < ApplicationController
         else
             render 'edit'
         end
+    end
+
+    #private just means available to the this controller only
+    private 
+
+    def set_student
+        @student = Student.find(params[:id])
     end
 
     def student_params
