@@ -13,20 +13,32 @@
                             <div class="row">
                                 <div class= "input-field col s12">
                                     <%= f.text_field :name, placeholder: "Full Name", autofocus: true %>
-                                    <%= f.label :name %>
+                                    <%= f.label :name, class: "active" %>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class= "input-field col s12">
                                     <%= f.text_field :email, placeholder: "Email", autofocus: true %>
-                                    <%= f.label :email %>
+                                    <%= f.label :email, class: "active" %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                    <%= f.password_field :password, placeholder: "Enter a password", autofocus: true %>
+                                    <%= f.label :password, class: "active" %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                    <%= f.password_field :password_confirmation, placeholder: "Confirm password", autofocus: true %>
+                                    <%= f.label :password_confirmation, class: "active" %>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class= "input-field col s12">
                                 <%# if @student instance variable is a new record %>
                                 <%# if is new record show sign up OTHERWISE ? show : submit changes %>
-                                    <%= f.submit(@student.new_record? ? "Sign up" : "Submit Changes", class: "btn light-blue waves-effect waves-light right" )%>
+                                    <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit Changes'.html_safe, class: "btn light-blue waves-effect waves-light right" )%>
                                 </div>
                             </div>
                         <% end %>
