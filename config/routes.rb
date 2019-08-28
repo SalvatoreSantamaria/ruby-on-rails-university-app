@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get 'courses/new', to: 'courses#new' #goes to courses controller, new action
   get 'about', to: 'pages#about'
   resources :students, except: [:destroy]
+  get 'login', to: 'logins#new' #upon receiving get login request, fire off controller 
+  post 'login', to: 'logins#create' #handled by logins controller, create action
+  delete 'logout', to: 'logins#destroy' #send request to logins controller, destroy action
 end
