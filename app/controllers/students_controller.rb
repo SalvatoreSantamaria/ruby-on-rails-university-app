@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
         @student = Student.new
     end
 
-    def create 
+    def create
         @student = Student.new(student_params)
         if @student.save
             flash[:sucess] = "You have successfully signed up" #display a message
@@ -49,7 +49,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-        params.require(:student).permit(:name, :email) #this will whitelist what we receive for the web form, name and email
+        params.require(:student).permit(:name, :email, :password, :password_confirmation) #this will whitelist what we receive for the web form, name and email
     end
 
 end
