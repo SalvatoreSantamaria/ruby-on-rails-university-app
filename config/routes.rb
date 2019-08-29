@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'login', to: 'logins#new' #upon receiving get login request, fire off controller 
   post 'login', to: 'logins#create' #handled by logins controller, create action
   delete 'logout', to: 'logins#destroy' #send request to logins controller, destroy action
+  post 'course_enroll', to: 'student_courses#create' #post request to course enroll, to student_courses controller, create action
 end

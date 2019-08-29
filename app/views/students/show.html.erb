@@ -13,8 +13,17 @@
             <p>Course Enrollments:</p>
         </div>
         <div class="card-action">
-            <h3>Current enrollements</h3>
-            <a href="#">This is a link</a>
+            <p>Current enrollements:
+                <% if @student.courses.empty? %>
+                     None
+                <% else %>
+                    <ul>
+                        <% @student.courses.each do |course| %>
+                            <li><% course.name %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+            </p>
         </div>
         </div>
         <%# if the current user is the same as the student on this page, show the link %>
