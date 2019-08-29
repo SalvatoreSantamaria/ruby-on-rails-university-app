@@ -17,7 +17,9 @@
             <a href="#">This is a link</a>
         </div>
         </div>
-        <%= link_to '<i class="material-icons right">cloud</i>Edit your profile'.html_safe, edit_student_path(@student), class:"waves-effect waves-light btn"%>
-
+        <%# if the current user is the same as the student on this page, show the link %>
+        <% if current_user == @student %> 
+            <%= link_to '<i class="material-icons right">cloud</i>Edit your profile'.html_safe, edit_student_path(@student), class:"waves-effect waves-light btn"%>
+        <% end %>
     </div>
 </div>
