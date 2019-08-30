@@ -1,7 +1,10 @@
 class StudentsController < ApplicationController
+    
+    skip_before_action :require_user, only: [:new, :create]
     #before_action will be applied to whatever method we specify
     #below, set_student is running from below
     before_action :set_student, only: [:show, :edit, :update]
+    before_action :require_same_student, only: [:edit, :update]
 
     def index
         @students = Student.all
@@ -50,6 +53,13 @@ class StudentsController < ApplicationController
 
     def student_params
         params.require(:student).permit(:name, :email, :password, :password_confirmation) #this will whitelist what we receive for the web form, name and email
+    end
+
+    def require_same_student
+        if current_user != @student #ifthe current user is not the same as the student object, then redirect to their own profile
+        flash[:notice] = "You can only edit your own profile"
+            redirect_to student_path(current_user)
+        end
     end
 
 end
