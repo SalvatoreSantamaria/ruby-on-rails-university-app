@@ -10,21 +10,18 @@
         <div class="card-content white-text">
             <span class="card-title">Name: <%=@student.name%></span>
             <p>Email: <%=@student.email%></p>
-            <p>Course Enrollments:</p>
-        </div>
-        <div class="card-action">
             <p>Current enrollements:
                 <% if @student.courses.empty? %>
-                     None
+                    None
                 <% else %>
                     <ul>
                         <% @student.courses.each do |course| %>
-                            <li><% course.name %></li>
+                            <li><%= course.name %></li>
                         <% end %>
                     </ul>
-                <% end %>
-            </p>
-        </div>
+                    <% end %>
+                </p>
+            </div>
         </div>
         <%# if the current user is the same as the student on this page, show the link %>
         <% if current_user == @student %> 
