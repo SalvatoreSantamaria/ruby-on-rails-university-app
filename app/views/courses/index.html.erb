@@ -19,6 +19,9 @@
                     <%= link_to "Enroll", course_enroll_path(course_id: course.id), method: :post %> <%# passing in course_id param (one of the keys in the params hash) and the value of the id of the course%>
                 <% end %>
                     <a href="#">Info</a>
+                    <%= link_to 'download via link_to', 'file.txt', download: '' %>
+                    <a href="file.txt" download>Download via a href</a>
+
             </div>
             </div>
         </div>
